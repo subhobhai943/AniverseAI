@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Settings, Clock, RotateCcw, Download, Globe, Github, X } from 'lucide-react';
 import './index.css';
+import aiAvatar from '../assets/artworks-000496368060-wd4wu9-t500x500.jpg';
 
 function App() {
   const [messages, setMessages] = useState([
@@ -72,7 +73,7 @@ function App() {
       <header>
         <div className="logo-area">
           <div className="avatar">
-            <img src="https://ui-avatars.com/api/?name=AniVerse+AI&background=FF5722&color=fff" alt="AI Avatar" />
+            <img src={aiAvatar} alt="AI Avatar" />
           </div>
           <div className="title-info">
             <h1>AniVerse AI</h1>
@@ -92,7 +93,7 @@ function App() {
           <div key={msg.id} className={`message ${msg.sender}-message`}>
             {msg.sender === 'ai' && (
               <div className="message-avatar">
-                <img src="https://ui-avatars.com/api/?name=AniVerse+AI&background=FF5722&color=fff" alt="AI" />
+                <img src={aiAvatar} alt="AI" />
               </div>
             )}
             <div className="message-content" dangerouslySetInnerHTML={{ __html: msg.text.replace(/\n/g, '<br>') }} />
@@ -107,7 +108,7 @@ function App() {
         {isLoading && (
           <div className="message ai-message">
              <div className="message-avatar">
-                <img src="https://ui-avatars.com/api/?name=AniVerse+AI&background=FF5722&color=fff" alt="AI" />
+                <img src={aiAvatar} alt="AI" />
               </div>
             <div className="message-content">Thinking...</div>
           </div>

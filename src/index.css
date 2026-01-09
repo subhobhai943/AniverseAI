@@ -43,7 +43,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/assets/guts-bg.jpg') no-repeat center center/cover;
+  /* Reference image from assets folder relative to src/index.css */
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../assets/file_00000000b8ac61f5b513d34bcf737fce.png') no-repeat center center/cover;
   z-index: -1;
   opacity: 0.5;
 }
@@ -70,6 +71,7 @@ header {
   height: 40px;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
+  object-fit: cover;
 }
 
 .title-info h1 {
@@ -125,6 +127,7 @@ header {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .message-content {
