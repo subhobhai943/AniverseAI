@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AniVerse AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="avatar">
+                <img src="https://ui-avatars.com/api/?name=AniVerse+AI&background=FF5722&color=fff" alt="AI Avatar">
+            </div>
+            <div class="title-info">
+                <h1>AniVerse AI</h1>
+                <p>Manga & Anime Intelligence</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button id="reset-btn" aria-label="Reset Chat"><i class="fas fa-undo"></i></button>
+            <button id="history-btn" aria-label="History"><i class="fas fa-clock"></i></button>
+            <button id="settings-btn" aria-label="Settings"><i class="fas fa-cog"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Chat Area -->
+    <main id="chat-container">
+        <div class="message ai-message welcome-message">
+            <div class="message-avatar">
+                <img src="https://ui-avatars.com/api/?name=AniVerse+AI&background=FF5722&color=fff" alt="AI">
+            </div>
+            <div class="message-content">
+                Hello! I'm AniVerse AI, your anime and manga companion. What would you like to discuss today?
+            </div>
+        </div>
+    </main>
+
+    <!-- Quick Prompts (visible when chat is empty-ish) -->
+    <div id="quick-prompts" class="quick-prompts">
+        <button class="prompt-chip" onclick="usePrompt('Ask about your favorite manga')">Ask about your favorite manga</button>
+        <button class="prompt-chip" onclick="usePrompt('Top Anime 2024')"><i class="far fa-star"></i> Top Anime 2024</button>
+        <button class="prompt-chip" onclick="usePrompt('Manga Recommendations')"><i class="far fa-file-alt"></i> Manga Recommendations</button>
+        <button class="prompt-chip" onclick="usePrompt('Character Analysis')"><i class="fas fa-user-circle"></i> Character Analysis</button>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+        <div class="input-wrapper">
+            <input type="text" id="user-input" placeholder="Ask about anime, manga..." autocomplete="off">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <span>Enable Notifications</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-item vertical">
+                    <span>Language</span>
+                    <select class="custom-select">
+                        <option value="en" selected>🇺🇸 English</option>
+                        <option value="jp">🇯🇵 Japanese</option>
+                    </select>
+                </div>
+                <button class="action-btn outline">
+                    <i class="fas fa-download"></i> Add to Home Screen
+                </button>
+                
+                <div class="about-section">
+                    <h3>About AniVerse AI</h3>
+                    <p>Your intelligent companion for everything Manga & Anime. Powered by advanced AI technology.</p>
+                    <div class="social-links">
+                        <i class="fab fa-github"></i>
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <p class="copyright">© Yeagerist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="history-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="far fa-clock"></i> Chat History</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body centered-placeholder">
+                <i class="far fa-comment-alt fa-3x"></i>
+                <p>No chat sessions yet</p>
+                <small>Start chatting to see your history</small>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
