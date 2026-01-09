@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Settings, Clock, RotateCcw, Download, Globe, Github, X } from 'lucide-react';
 import './index.css';
-import aiAvatar from '../assets/artworks-000496368060-wd4wu9-t500x500.jpg';
+import aiAvatar from '../assets/file_00000000b8ac61f5b513d34bcf737fce.png';
 
 function App() {
   const [messages, setMessages] = useState([
@@ -49,7 +49,8 @@ function App() {
         setMessages(prev => [...prev, { id: Date.now() + 1, text: data.reply, sender: 'ai' }]);
       }
     } catch (error) {
-      setMessages(prev => [...prev, { id: Date.now() + 1, text: "Sorry, I couldn't connect to the server.", sender: 'ai' }]);
+      console.error('Fetch error:', error);
+      setMessages(prev => [...prev, { id: Date.now() + 1, text: "Sorry, I couldn't connect to the server. Please check if the API is configured.", sender: 'ai' }]);
     } finally {
       setIsLoading(false);
     }
@@ -61,8 +62,6 @@ function App() {
 
   const usePrompt = (text) => {
     setInput(text);
-    // Optional: auto-send
-    // handleSend();
   };
 
   return (

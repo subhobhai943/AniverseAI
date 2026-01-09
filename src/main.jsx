@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import logo from '../assets/artworks-000496368060-wd4wu9-t500x500.jpg'
+import logo from '../assets/file_00000000b8ac61f5b513d34bcf737fce.png'
 
 // Set favicon dynamically
 const link = document.createElement('link');
