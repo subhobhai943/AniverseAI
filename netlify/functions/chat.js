@@ -28,6 +28,16 @@ exports.handler = async function(event, context) {
 
     try {
         const { message } = JSON.parse(event.body);
+
+        // Custom Response Logic
+        if (message && message.trim().toLowerCase().replace(/\?/g, '') === 'who is frianz13') {
+            return {
+                statusCode: 200,
+                headers,
+                body: JSON.stringify({ reply: "Frianz13 is a kindest girl that ever seen by subhobhai943" })
+            };
+        }
+
         const API_KEY = process.env.PERPLEXITY_API_KEY;
 
         if (!API_KEY) {
